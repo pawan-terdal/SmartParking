@@ -8,30 +8,16 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View} from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Tabs, Tab } from 'native-base';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import Tab1 from './Tabs/Tab1';
-import Tab2 from './Tabs/Tab2';
-export default class App extends Component {  
+
+export default class Tab2 extends Component {  
   render() {
-    console.log("hello there");
     return (
      <Container>
-       <Header>
-        <Body>
-          <Right>
-            <Title style = {styles.header}>Smart Parking</Title>
-          </Right>
-        </Body>
-       </Header>
-       <Tabs>
-          <Tab heading="Tab1">
-              <Tab1 />
-          </Tab>
-          <Tab heading="Tab2">
-              <Tab2 />
-          </Tab>
-       </Tabs>
+       <Content>
+         <Text>Patking Lot 2</Text>
+       </Content>
      </Container>
     );
   }
