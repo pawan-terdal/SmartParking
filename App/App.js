@@ -12,9 +12,12 @@ import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Rig
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Tab1 from './Tabs/Tab1';
 import Tab2 from './Tabs/Tab2';
+import dbConn from './Config/Firestore';
 export default class App extends Component {  
   render() {
     console.log("hello there");
+    console.log(dbConn);
+    
     return (
      <Container>
        <Header>
@@ -25,10 +28,10 @@ export default class App extends Component {
         </Body>
        </Header>
        <Tabs>
-          <Tab heading="Tab1">
+          <Tab heading="Parking Lot 1">
               <Tab1 />
           </Tab>
-          <Tab heading="Tab2">
+          <Tab heading="Parking Lot 2">
               <Tab2 />
           </Tab>
        </Tabs>
