@@ -7,23 +7,15 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, View, Image} from "react-native";
+import { StyleSheet, Image} from "react-native";
 import dbConn from '../Config/Firestore'
 import {
   Container,
-  Header,
-  Title,
   Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Icon,
-  Text
+  
 } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
+import FillCars from "./FillCars";
 
 export default class Tab2 extends Component {
   constructor(props) {
@@ -34,7 +26,7 @@ export default class Tab2 extends Component {
     try {
       await dbConn
         .collection("Parking_System")
-        .doc("Parking Lot 2")
+        .doc("Parking Lot 1")
         .onSnapshot(
           {
             includeMetadataChanges: true // Listen for document metadata changes
@@ -44,9 +36,9 @@ export default class Tab2 extends Component {
             var data = doc.data();
             console.log("In tab2...... ",data);
             this.setState({
-              lot1: data["Slot_1"],
-              lot2: data["Slot_2"],
-              lot3: data["Slot_3"]
+              lot4: data["Slot_4"],
+              lot5: data["Slot_5"],
+              lot6: data["Slot_6"]
             });
             console.log("In tab2 component did mount........", this.state);
           }
@@ -65,8 +57,8 @@ export default class Tab2 extends Component {
               <Col style={styles.column}>
                 <Image
                   source={
-                    this.state.lot1 == "parked"
-                      ? require("./occupied.jpeg")
+                    this.state.lot4 == "parked"
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
@@ -74,8 +66,8 @@ export default class Tab2 extends Component {
               <Col style={styles.column}>
                 <Image
                   source={
-                    this.state.lot2 == "parked"
-                      ? require("./occupied.jpeg")
+                    this.state.lot5 == "parked"
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
@@ -83,14 +75,15 @@ export default class Tab2 extends Component {
               <Col style={styles.column}>
                 <Image
                   source={
-                    this.state.lot3 == "parked"
-                      ? require("./occupied.jpeg")
+                    this.state.lot6 == "parked"
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
               </Col>
             </Row>
           </Grid>
+          <FillCars />
         </Content>
       </Container>
     );
@@ -113,5 +106,15 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     flexDirection: "row"
+  },
+  column: {
+    margin: 10,
+    marginRight: 10
+  },
+  row: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginRight: 10
   }
 });

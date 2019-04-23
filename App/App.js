@@ -7,25 +7,15 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
   Title,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
   Right,
   Body,
-  Icon,
-  Text,
   Tabs,
-  Tab,
-  Spinner
-} from "native-base";
-import { Col, Row, Grid } from "react-native-easy-grid";
+  Tab} from "native-base";
 import Tab1 from "./Components/Tab1";
 import Tab2 from "./Components/Tab2";
 export default class App extends Component {

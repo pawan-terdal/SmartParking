@@ -7,23 +7,13 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, View, Image } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import dbConn from "../Config/Firestore";
 import {
   Container,
-  Header,
-  Title,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Icon,
-  Text
-} from "native-base";
+  Content} from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
+import FillCars from "./FillCars";
 
 export default class Tab1 extends Component {
   constructor(props) {
@@ -68,7 +58,7 @@ export default class Tab1 extends Component {
                 <Image
                   source={
                     this.state.lot1 == "parked"
-                      ? require("./occupied.jpeg")
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
@@ -77,7 +67,7 @@ export default class Tab1 extends Component {
                 <Image
                   source={
                     this.state.lot2 == "parked"
-                      ? require("./occupied.jpeg")
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
@@ -86,13 +76,15 @@ export default class Tab1 extends Component {
                 <Image
                   source={
                     this.state.lot3 == "parked"
-                      ? require("./occupied.jpeg")
+                      ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
                 />
               </Col>
+              
             </Row>
           </Grid>
+          <FillCars />
         </Content>
       </Container>
     );
@@ -123,6 +115,7 @@ const styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: "row",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    marginRight: 10
   }
 });
