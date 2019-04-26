@@ -38,7 +38,8 @@ def updateCloud(status, key):
 
 def initializeStatus():
     status = {}
-    status["ir1"] = status["ir2"] = status["ir3"] = status["ir4"] = status["ir5"] = status["ir6"] = "not parked"
+    status["ir1"] = "far"
+    status["ir2"] = status["ir3"] = status["ir4"] = status["ir5"] = status["ir6"] = "not parked"
     return status
 
 
@@ -65,9 +66,9 @@ if __name__ == "__main__":
     while True:
         time.sleep(1)
         if gpio.input(ir1) == False:
-            newStatus["ir1"] = "parked"
+            newStatus["ir1"] = "near"
         else:
-            newStatus["ir1"] = "not parked"
+            newStatus["ir1"] = "far"
         checkIfStatusHasChanged(oldStatus, newStatus, "ir1")
         oldStatus["ir1"] = newStatus["ir1"]
 
