@@ -1,7 +1,7 @@
 # SmartParking
 An IoT based smart solution to parking in cities integrated with cloud
 
-# Instructions to run and install
+# Instructions to install and run
 ### 1. Install the React Native CLI
     npm install -g react-native-cli
     
