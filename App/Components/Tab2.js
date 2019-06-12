@@ -7,13 +7,9 @@
  */
 
 import React, { Component } from "react";
-import { StyleSheet, Image} from "react-native";
-import dbConn from '../Config/Firestore'
-import {
-  Container,
-  Content,
-  
-} from "native-base";
+import { StyleSheet, Image } from "react-native";
+import dbConn from "../Config/Firestore";
+import { Container, Content } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import FillCars from "./FillCars";
 
@@ -34,7 +30,7 @@ export default class Tab2 extends Component {
           doc => {
             // ...
             var data = doc.data();
-            console.log("In tab2...... ",data);
+            console.log("In tab2...... ", data);
             this.setState({
               lot4: data["Slot_4"],
               lot5: data["Slot_5"],
@@ -54,24 +50,6 @@ export default class Tab2 extends Component {
         <Content>
           <Grid>
             <Row style={styles.row}>
-              <Col style={styles.column}>
-                <Image
-                  source={
-                    this.state.lot4 == "parked"
-                      ? require("./dummy2.jpeg")
-                      : require("./vacant.jpeg")
-                  }
-                />
-              </Col>
-              <Col style={styles.column}>
-                <Image
-                  source={
-                    this.state.lot5 == "parked"
-                      ? require("./dummy2.jpeg")
-                      : require("./vacant.jpeg")
-                  }
-                />
-              </Col>
               <Col style={styles.column}>
                 <Image
                   source={
@@ -109,7 +87,8 @@ const styles = StyleSheet.create({
   },
   column: {
     margin: 10,
-    marginRight: 10
+    marginRight: 10,
+    alignItems: "center",
   },
   row: {
     flex: 1,

@@ -64,18 +64,12 @@ export default class Tab1 extends Component {
                 />
               </Col>
               <Col style={styles.column}>
-                <Image
-                  source={
-                    this.state.lot2 == "parked"
-                      ? require("./dummy2.jpeg")
-                      : require("./vacant.jpeg")
-                  }
-                />
+
               </Col>
               <Col style={styles.column}>
                 <Image
                   source={
-                    this.state.lot3 == "parked"
+                    this.state.lot2 == "parked"
                       ? require("./dummy2.jpeg")
                       : require("./vacant.jpeg")
                   }
